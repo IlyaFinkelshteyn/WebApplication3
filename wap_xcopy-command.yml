@@ -1,12 +1,8 @@
-version: 1.0.{build}
-
 install:
 - nuget restore
+
 build_script:
-- msbuild "WebApplication3\WebApplication3.csproj" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /t:Package /p:PackageLocation=%APPVEYOR_BUILD_FOLDER%\wap_art.zip
-- appveyor PushArtifact wap_art.zip -Type WebDeployPackage -DeploymentName AppDeploymentName
 - msbuild "WebApplication3\WebApplication3.csproj" /verbosity:minimal /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /p:DeployOnBuild=True /p:PublishProfile=my-pub
 
 artifacts:
 - path: published_app
-
