@@ -1,3 +1,3 @@
 write-host "calling deploy.ps1"
-sleep 120
+sleep 30
 pwd
