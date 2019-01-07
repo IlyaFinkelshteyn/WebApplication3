@@ -2,8 +2,8 @@ version: 1.0.{build}
 image: Visual Studio 2013
 environment:
   OCTOPUS_PACKAGE_NUGET: true
-nuget:
-  disable_publish_octopus: true
+#nuget:
+#  disable_publish_octopus: true
 before_build:
 - cmd: nuget restore -verbosity quiet
 build:
